@@ -1,110 +1,69 @@
-# \# PEDAS 2026 — Machine Learning Classification
+# PEDAS 2026 — Machine Learning Classification
 
-# 
+A machine learning classification project developed for PEDAS 2026.
 
-# A machine learning classification project developed for \*\*PEDAS 2026\*\*, focusing on data preprocessing, feature engineering, and Random Forest classification.
+## Final Score
 
-# 
+**Final score: `0.835325545`**
 
-# \## Project Overview
+## Project Overview
 
-# 
+This project predicts the category of each record using dataset features. The workflow includes data preprocessing, feature engineering, Random Forest model training, and prediction generation.
 
-# This project builds a classification model to predict the category of each record based on the available dataset features. The workflow covers data preparation, feature engineering, model training, and prediction generation.
+## Workflow
 
-# 
+1. **Data loading** — Load the labeled training data and unlabeled prediction data.
+2. **Data preprocessing** — Prepare the input data and normalize category labels.
+3. **Feature engineering** — Extract features from domain information, URL characteristics, timestamps, and frequency-based information.
+4. **Model training** — Train a Random Forest classifier on the labeled training data.
+5. **Prediction** — Generate category predictions for the unlabeled records.
 
-# \## Methodology
+## Model Configuration
 
-# 
+The final model uses `RandomForestClassifier` with the following parameters:
 
-# The project follows these steps:
+| Parameter | Value |
+|---|---|
+| `n_estimators` | `100` |
+| `max_depth` | `None` |
+| `min_samples_leaf` | `1` |
+| `max_features` | `"sqrt"` |
+| `class_weight` | `None` |
+| `random_state` | `42` |
+| `n_jobs` | `-1` |
 
-# 
+## Repository Structure
 
-# 1\. \*\*Data Loading\*\* — Load the labeled training dataset and unlabeled prediction dataset.
+```text
+PEDAS-2026/
+├── README.md
+├── data/
+│   ├── training.csv
+│   └── predict.csv
+├── notebooks/
+│   └── pedas2026_final.ipynb
+└── submission/
+    └── submission_final.csv
+```
 
-# 2\. \*\*Data Preprocessing\*\* — Prepare the data and normalize category labels.
+## Dataset
 
-# 3\. \*\*Feature Engineering\*\* — Extract features from domain information, URL characteristics, timestamps, and frequency-based information.
+- `training.csv` — Labeled data used to train the classifier.
+- `predict.csv` — Unlabeled data used to generate predictions.
 
-# 4\. \*\*Model Training\*\* — Train a Random Forest classifier using the labeled training data.
+The notebook must be able to access these files at the paths configured in the code.
 
-# 5\. \*\*Prediction\*\* — Generate category predictions for the unlabeled dataset.
+## How to Run
 
-# 
+1. Clone or download this repository.
+2. Open `notebooks/pedas2026_final.ipynb` in Google Colab or Jupyter Notebook.
+3. Make sure the dataset files are accessible at the locations configured in the notebook.
+4. Run the notebook cells in order to reproduce preprocessing, feature engineering, model training, and prediction.
 
-# \## Model
+## Output
 
-# 
+The prediction workflow generates category predictions for the records in `predict.csv`. The final submission file is stored separately in the `submission/` directory.
 
-# The final model uses `RandomForestClassifier` with the following configuration:
+## Disclaimer
 
-# 
-
-# | Parameter | Value |
-
-# |---|---|
-
-# | `n\_estimators` | 100 |
-
-# | `max\_depth` | `None` |
-
-# | `min\_samples\_leaf` | 1 |
-
-# | `max\_features` | `sqrt` |
-
-# | `class\_weight` | `None` |
-
-# | `random\_state` | 42 |
-
-# 
-
-# \## Repository Structure
-
-# 
-
-# ```text
-
-# PEDAS-2026/
-
-# ├── README.md
-
-# ├── data/
-
-# │   ├── training.csv
-
-# │   └── predict.csv
-
-# ├── notebooks/
-
-# │   └── pedas2026\_final.ipynb
-
-# └── submission/
-
-# &#x20;   └── Tim Bebas-03.csv
-
-# ```
-
-# 
-
-# \## Dataset
-
-# 
-
-# \- `training.csv` — Labeled data used to train the classification model.
-
-# \- `predict.csv` — Unlabeled data used to generate predictions.
-
-# 
-
-# The dataset files are expected to be available in the `data/` directory.
-
-# 
-
-# \## Output
-
-# 
-
-# The prediction workflow produces category predictions for the records in `predict.csv`. The final submission file is provided separately in the `submission/` directory.
-
+This repository documents a machine learning project developed for PEDAS 2026. Check dataset ownership, redistribution permissions, and competition rules before publishing any competition data.
